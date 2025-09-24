@@ -30,7 +30,7 @@ export const useExchangeStore = defineStore('exchange', () => {
   const error = ref<StoreError | null>(null)
 
   let unsubscribe: (() => void) | null = null
-  let debounceTimer: NodeJS.Timeout | null = null
+  let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
   // Helpers
   const setError = (message: string, type: ErrorType) => {
